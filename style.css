@@ -1,5 +1,5 @@
 :root {
-    --primary: #111854;
+    --primary: #00a6ffbe;
     --light: #ffffff;
     --grey: #efefef;
 }
@@ -23,4 +23,8 @@ body{
 
 #sidebar-container .menu{
     width: 18rem;
+}
+
+span{
+    font-size: 18px;
 }
