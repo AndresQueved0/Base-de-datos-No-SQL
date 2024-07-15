@@ -7,31 +7,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="img/icon-tienda-removebg-preview.png">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="mongodb-icon.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/img/mongodb-icon.png">
   </head>
   <body>
-
-
-
-    <div class="sidebar">
+    <button id="toggleSidebarBtn" class="text-success fs-2 transparent-background"><i class="lni lni-grid-alt"></i></button>
+    <div class="sidebar" id="sidebar">
         <div class="logo">
-            <h4 class="text-light fw-bold">Base de datos NoSQL</h4>
+            <button id="closeSidebarBtn" class="btn text-light fw-bold">
+                
+                Base de datos NoSQL
+            </button>
         </div>
         <ul class="sidebar-nav">
             <li class="sidebar-item nav-link">
-                <a href="#" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
                     <span class="fw-semibold">Base de datos documentales</span> 
                 </a>
                 <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
                     <li class="sidebar-item">
-                        <a href="mongo.html" onclick="loadContent('home')" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                        <img src="mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
+                        <a href="/mongo.html" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
+                        <img src="/img/mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
                     </a>
                     </li>
                     <li class="sidebar-item">   
                         <a href="#" class="nav-link text-light fw-semibold">
-                            <img src="firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
+                            <img src="/img/firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
                         </a>
                     </li>
                 </ul>
@@ -39,15 +40,16 @@
         </ul>
 </div>
 
-<div class="container" style="margin-right: 7%; ">
+<div class="container px-5 py-5" style="margin-right: 7% auto; ">
     <h1 class="text-center pt-4">
         ¿Que es MongoDB?
     </h1>
-    <div class="container d-flex">
+    <div class="container">
     <p class="pt-3">
         MongoDB (del inglés humongous, "enorme") es un sistema de base de datos NoSQL orientado a documentos de código abierto y escrito en C++, que en lugar de guardar los datos en tablas lo hace en estructuras de datos BSON (similar a JSON) con un esquema dinámico. Al ser un proyecto de código abierto, sus binarios están disponibles para los sistemas operativos Windows, GNU/Linux, OS X y Solaris y es usado en múltiples proyectos o implementaciones en empresas como MTV Network, Craigslist, BCI o Foursquare.+
     </p>
-    <img class="ms-5" src="banermongo.png" alt="" width="350px" height="200px">
+
+    <img class="ms-5" src="/img/banermongo.png" alt="" width="90% auto" height="100% auto">
     </div>
     <h1 class="text-center pt-4">
         ¿Cuales son las caracteristicas de MongoDB?
@@ -85,14 +87,56 @@
             <p class="pt-3">
                 MongoDB es una base de datos orientada a documentos. Esto quiere decir que en lugar de guardar los datos en registros, guarda los datos en documentos. Estos documentos son almacenados en BSON, que es una representación binaria de JSON.<br><br> Esto representa una de las diferencias más importantes con respecto a las bases de datos relacionales. Y resulta que no es que no es necesario seguir un esquema. Los documentos de una misma colección - concepto similar a una tabla de una base de datos relacional -, pueden tener esquemas diferentes.<br><br> Imaginemos que tenemos una colección a la que llamamos Personas. Un documento podría almacenarse de la siguiente manera:
             </p>
-        <img class="ms-5 shadow" src="ejemplos.png" alt="" width="1000px" height="400px">
+        <img class="ms-4 img-fluid shadow" src="/img/ejemplos.png" alt="" width="90% auto" height="100% auto">
         <p class="pt-3">
             Como se puede ver el documento es exactamente igual a lo que conocemos de un documento JSON. <br><br>Lo interesante viene cuando queremos almacenar en una misma colección un documento como este: { Nombre: "Roger Rabbit", Estudios: "Dibu y conejo", Amigos:102 } Tal como podemos ver, este no sigue el mismo esquema del primero, añadiendo algún campo nuevo que no existe en el documento anterior o incluso de un tipo distinto, pero no importa. Algo que resulta impensable en una base de datos relacional como SQL es posible en MongoDB.
         </p>
         </div>
+        <h3>
+            Desventajas de MongoDB
+        </h3>
+        <p> <strong>1. Consumo de Memoria:</strong> MongoDB puede consumir una cantidad significativa de memoria, ya que mantiene índices y algunos datos en la memoria para mejorar el rendimiento.
+<br><br>
+            <strong>2. Rendimiento en Consultas Complejas:</strong> Aunque es excelente para consultas simples, puede tener problemas de rendimiento con consultas muy complejas o con operaciones de agregación en grandes conjuntos de datos.
+            <br><br>
+            <strong>3. Inconsistencia de Esquema:</strong> La flexibilidad de esquema puede conducir a inconsistencias de datos si no se maneja adecuadamente, ya que no hay una estructura fija que los datos deban seguir.
+            <br><br>
+            <strong>4. Transacciones Limitadas:</strong> Aunque MongoDB ha mejorado su soporte para transacciones ACID en versiones recientes, su implementación de transacciones es más limitada en comparación con las bases de datos relacionales tradicionales.
+            <br><br>
+            <strong>5. Bloqueo a Nivel de Documento:</strong> Aunque MongoDB utiliza bloqueo a nivel de documento para mejorar la concurrencia, en escenarios de alta concurrencia esto puede no ser suficiente y puede llevar a cuellos de botella.
+            <br><br>
+            <strong>6. Espacio en Disco:</strong> Los documentos en MongoDB pueden ser grandes debido a la redundancia de datos, lo que puede llevar a un mayor consumo de espacio en disco.
+            <br><br>
+            <strong>7. Backup y Recuperación:</strong> Aunque existen herramientas para el respaldo y la recuperación, estas operaciones pueden ser más complicadas y menos maduras que en las bases de datos relacionales.
+            <br><br>
+            <strong>8. Interoperabilidad:</strong> La falta de un esquema fijo puede dificultar la interoperabilidad con otras aplicaciones y sistemas que requieren una estructura de datos más rígida y predefinida.
+            <br><br>
+            <strong>9. Indexación:</strong> La creación y mantenimiento de índices puede ser costosa en términos de tiempo y recursos, especialmente en grandes volúmenes de datos y cuando se realizan muchas escrituras.
+            <br><br>
+            <strong>10. Curva de Aprendizaje:</strong> Para aquellos que están acostumbrados a las bases de datos relacionales, aprender a usar MongoDB y sus particularidades puede representar una curva de aprendizaje considerable.</p>
+
+            <h3>Pagina oficial de documentación</h3>
+            <div class="row">
+                <div class="col-md-8 mt-4 pb-5">
+                    <img src="/img/mongodoc.png" class="ms-5 shadow " alt="" width="90%" height="100%">
+            </div>
+            <div class="col-md-4 " style="padding-top: 7%;">
+                
+                <p class="text-center">Para mas información sobre MongoDB, puedes visitar la pagina oficial de documentación de MongoDB.</p>
+                <div class="d-flex justify-content-center">
+            <a href="https://www.mongodb.com/docs/manual/" class="btn btn-success">Link pagina oficial</a></div>
+        </div>
+        </div>
 </div>
 
+<div style="margin-top: 5%;">
+    <footer class="bg-ligth text-light text-center border-top pt-4" >
+        <p class="text-dark">Diseñado por Analisis y Desarrollo de Software Ficha No. 2670687</p>
+        <p class="text-dark fw-bold">&copy; 2024 Andres Quevedo</p>
+      </footer>
+    </div>
 
+    <Script src="/scripts.js"></Script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 </body>

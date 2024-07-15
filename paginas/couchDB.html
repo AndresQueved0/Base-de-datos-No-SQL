@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CouchDB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="img/icon-tienda-removebg-preview.png">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/img/couchicon.png">
+  </head>
+  <body>
+    <button id="toggleSidebarBtn" class="bu fs-2 transparent-background"><i class="lni CBbut lni-grid-alt"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <button id="closeSidebarBtn" class="btn text-light fw-bold">
+                
+                Base de datos NoSQL
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="/index.html" class="nav-link text-light collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
+                    Base de datos documentales
+                </a>
+                <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/mongo.html" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
+                        <img src="/img/mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="#" class="nav-link text-light fw-semibold">
+                            <img src="/img/firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+</div>
+
+<div class="container px-5 py-5 shadow" style="margin-right: 7% auto; ">
+    <h1 class="text-center pt-4">
+        ¿Que es CouchDB?
+    </h1>
+    <div class="container">
+    <p class="pt-3">
+        Apache CouchDB  es una base de datos de documentos NoSQL de código abierto que recopila y almacena datos en formatos de documentos basados ​​en JSON. A diferencia de las bases de datos relacionales, CouchDB utiliza un modelo de datos sin esquema, que simplifica la gestión de registros en varios dispositivos informáticos, teléfonos móviles y navegadores web.
+        <br><br>
+CouchDB fue lanzada en 2005 y luego se convirtió en un proyecto de Apache Software Foundation (enlace externo a ibm.com) en 2008. Como proyecto de código abierto, CouchDB cuenta con el apoyo de una comunidad activa de desarrolladores que mejoran continuamente el software con un enfoque en la facilidad de uso y la adopción de la web.
+    </p>
+    <div class="d-flex justify-content-center">
+    <img class="" src="/img/couchdb.png" alt="" width="50%">
+</div>
+    </div>
+    <h1 class="text-center pt-4">
+        ¿Cuales son las caracteristicas de CouchDB?
+    </h1>
+    <div class="container d-flex">
+            <ul class="pt-3">
+                <li><strong>Replicación:</strong> Una de las características que definen a CouchDB es la replicación bidireccional, que permite la sincronización de datos en varios servidores y dispositivos. Esta replicación permite a las empresas maximizar la disponibilidad de los sistemas, reducir los tiempos de recuperación de datos, ubicar geográficamente los datos más cerca de los usuarios finales y simplificar los procesos de copia de seguridad.
+                </li>
+                <br>
+                <li>
+                    <strong>Vistas:</strong> CouchDB usa vistas como la herramienta principal para ejecutar consultas y crear informes a partir de archivos de documentos almacenados. Las vistas le permiten filtrar documentos para encontrar información relevante para un proceso de base de datos en particular. Esta información puede luego mapearse según sus preferencias, y extraerse en un orden específico.
+                </li>
+                <br>
+                <li>
+                    <strong>API HTTP:</strong>  CouchDB usa una API RESTful para acceder a la base de datos desde cualquier lugar, con total flexibilidad de operaciones CRUD (crear, leer, actualizar, eliminar). Este medio simple y eficaz de conectividad de bases de datos hace que CouchDB sea flexible, rápida y potente, sin dejar de ser muy accesible.
+                </li>
+                <br>
+                <li>
+                    <strong>Desarrollada para usar fuera de línea:</strong> Cuando la usabilidad y accesibilidad de su base de datos crece, es esencial poder crear aplicaciones que funcionen tan bien fuera de línea como en línea. CouchDB permite que las aplicaciones almacenen los datos recopilados localmente en dispositivos móviles y navegadores, y luego sincroniza esos datos una vez que vuelven a estar en línea.
+                </li>
+                <br>
+                <li>
+                    <strong>Almacenamiento eficiente de documentos:</strong> En CouchDB, los documentos son las unidades principales de datos que se utilizan en JSON, compuestas por varios campos y archivos adjuntos para un fácil almacenamiento. No hay límite para el tamaño del texto o el recuento de elementos de cada documento, y se puede acceder a los datos y actualizarlos desde múltiples fuentes de bases de datos y en clústeres de servidores distribuidos globalmente.
+                </li>
+                <br>
+                <li>
+                    <strong>Compatibilidad:</strong> CouchDB es extremadamente accesible y ofrece una variedad de beneficios de compatibilidad cuando se integra con su infraestructura actual. CouchDB fue desarrollada en lenguaje Erlang (un lenguaje de programación y un sistema de tiempo de ejecución de uso general, concurrente y recolectado de basura), lo que la hace confiable y fácil de usar para los desarrolladores.
+                </li>
+                <br>
+            </ul>
+        </div>
+        <h1 class="text-center pt-4">
+            ¿Cual es el funcionamiento de CouchDB?
+        </h1>
+        <div class="container">
+            <p class="pt-3">
+                CouchDB es una base de datos NoSQL orientada a documentos que almacena datos en formato JSON, permitiendo una estructura flexible y dinámica. Utiliza una arquitectura de replicación multi-maestro, ideal para entornos distribuidos y offline, donde la conectividad puede ser intermitente. Las consultas en CouchDB se realizan mediante vistas definidas con funciones de mapeo y reducción en JavaScript, y también ofrece la API de consultas Mango para consultas ad-hoc más intuitivas.
+<br><br>
+Además, CouchDB gestiona automáticamente los conflictos de datos que pueden surgir en la replicación, garantizando la consistencia en todos los nodos. Ofrece autenticación basada en credenciales de usuario y roles, y permite definir políticas de control de acceso a nivel de base de datos, proporcionando seguridad adicional para los datos almacenados. Estas características hacen que CouchDB sea robusta, escalable y adecuada para aplicaciones móviles y distribuidas.
+            </p>
+        </div>
+        <h3>
+            Desventajas de CouchDB
+        </h3>
+        <p> <strong>1. Rendimiento de Consultas Complejas:</strong> Las consultas pueden ser menos eficientes que en bases de datos relacionales tradicionales, especialmente para operaciones complejas que requieren múltiples uniones o agregaciones.
+<br><br>
+            <strong>2. Consistencia Eventual:</strong> CouchDB utiliza consistencia eventual en su replicación, lo que significa que puede haber retrasos antes de que todos los nodos vean los mismos datos, lo cual puede no ser ideal para aplicaciones que requieren consistencia estricta.
+            <br><br>
+            <strong>3. Curva de Aprendizaje:</strong> Para los desarrolladores acostumbrados a bases de datos relacionales, la transición a CouchDB puede implicar una curva de aprendizaje debido a su modelo de datos y su enfoque en la replicación y gestión de conflictos.
+            <br><br>
+            <strong>4. Espacio en Disco: </strong>Los archivos de base de datos pueden crecer rápidamente debido a la necesidad de almacenar múltiples versiones de documentos para gestionar la replicación y los conflictos.
+            <br><br>
+            <strong>5. Herramientas de Administración: </strong> Aunque han mejorado, las herramientas de administración y monitoreo de CouchDB no son tan maduras o ricas en características como las disponibles para algunas bases de datos más establecidas.
+            <br><br>
+            <strong>6. Soporte y Comunidad:</strong> La comunidad de CouchDB, aunque activa, es más pequeña en comparación con otras bases de datos NoSQL más populares, lo que puede limitar la disponibilidad de recursos y soporte.
+            <br><br>
+            <strong>7. Actualización y Migración:</strong> Las actualizaciones y migraciones de versiones anteriores de CouchDB pueden ser complicadas y requerir una planificación cuidadosa para evitar interrupciones en el servicio.
+            <br><br>
+            <h3>Pagina oficial de documentación</h3>
+            <div class="row">
+                <div class="col-md-8 mt-4 pb-5">
+                    <img src="/img/couchbanner.png" class="ms-5 shadow " alt="" width="90%" height="100%">
+            </div>
+            <div class="col-md-4 " style="padding-top: 7%;">
+                
+                <p class="text-center">Para mas información sobre CouchDB puedes visitar la pagina oficial de documentación de CouchDB</p>
+                <div class="d-flex justify-content-center">
+            <a href="https://docs.couchdb.org/en/stable/" class="btn CBbutt">Link pagina oficial</a></div>
+        </div>
+        </div>
+</div>
+
+<div style="margin-top: 5%;">
+    <footer class="bg-ligth text-light text-center border-top pt-4" >
+        <p class="text-dark">Diseñado por Analisis y Desarrollo de Software Ficha No. 2670687</p>
+        <p class="text-dark fw-bold">&copy; 2024 Andres Quevedo</p>
+      </footer>
+    </div>
+
+    <Script src="/scripts.js"></Script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</body>
+</html>

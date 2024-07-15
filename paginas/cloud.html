@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Firestore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="img/icon-tienda-removebg-preview.png">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/img/firestore-icon.png">
+  </head>
+  <body>
+    <button id="toggleSidebarBtn" class=" fs-2 transparent-background"><i class="lni buttt lni-grid-alt"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <button id="closeSidebarBtn" class="btn text-light fw-bold">
+                
+                Base de datos NoSQL
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="/index.html" class="nav-link text-light collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
+                    Base de datos documentales
+                </a>
+                <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/mongo.html" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
+                        <img src="/img/mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="#" class="nav-link text-light fw-semibold">
+                            <img src="/img/firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+</div>
+
+<div class="container px-5 py-5 shadow" style="margin-right: 7% auto; ">
+    <h1 class="text-center pt-4">
+        ¿Que es Cloud Firestore?
+    </h1>
+    <div class="container">
+    <p class="pt-3">
+        Cloud Firestore es una base de datos de documentos NoSQL caracterizada por su flexibilidad y escalabilidad en la nube y que permite almacenar y sincronizar los datos necesarios para el desarrollo del cliente y el servidor, así como dispositivos móviles y demás.
+<br><br>
+Cloud Firestore te ofrece todas las herramientas ideales para que puedas programar aplicaciones de alta calidad, aumentando así tu base de usuarios y mejorando tu negocio. Esta base de datos se encargará de los aspectos básicos y técnicos de la plataforma, lo que te permitirá enfocarte en el desarrollo de tu negocio.
+    </p>
+    <div class="d-flex justify-content-center">
+    <img class="" src="/img/Cloud-Firestore.png" alt="" width="50%">
+</div>
+    </div>
+    <h1 class="text-center pt-4">
+        ¿Cuales son las caracteristicas de Cloud Firestore?
+    </h1>
+    <div class="container d-flex">
+            <ul class="pt-3">
+                <li><strong>No requiere servidores:</strong> Esta base de datos, completamente gestionada por Google, no requiere del uso de algún servidor externo, lo que facilita el proceso de escalar los recursos con el objetivo de ajustarse a alguna demanda que tengas como cliente. Todo esto lo lleva a cabo sin ventanas de mantenimiento o momentos de inactividad por reinicio, permitiendo que puedas seguir trabajando de manera normal, incluso cuando la plataforma está escalando.
+                </li>
+                <br>
+                <li>
+                    <strong>Actualización y sincronización en tiempo real:</strong> Cloud Firestore se caracteriza también por proporcionarte los servicios de actualización y sincronización en tiempo real que contribuyen en el desarrollo de diferentes tipos de aplicaciones, especialmente las de tipo multiusuario o colaborativa en la web para dispositivos móviles, así como las relacionadas con el internet of things.
+                </li>
+                <br>
+                <li>
+                    <strong>Asistencia sin conexión:</strong> Contiene un modo sin conexión que se encarga de almacenar en el caché aquellos datos que tu aplicación utiliza de manera frecuente y activa. Esto permite que tu app pueda realizar operaciones de lectura y escritura, así como escucha y consulta de datos, incluso en los momentos en el que el dispositivo esté sin conexión. Una vez el equipo vuelve a conectarse, Cloud Firestore se encargará de sincronizar todos tus cambios locales en la plataforma.
+                </li>
+                <br>
+                <li>
+                    <strong>Replicación multirregional:</strong> Cloud Firestore también tiene la característica de replicación de tipo multirregional, que, en conjunto con la coherencia inmediata, permite que tus datos estén seguros y cuenten con una garantía de disponibilidad de hasta el 99,999%, incluso en situaciones problemáticas o cuando se presenten desastres.
+                </li>
+                <br>
+                <li>
+                    <strong>Flexibilidad:</strong> Aprovechando la capacidad de MongoDB para el balanceo de carga y la replicación de datos, Mongo puede ser utilizado también como un sistema de archivos. Esta funcionalidad, llamada GridFS e incluida en la distribución oficial, permite manipular archivos y contenido.
+                </li>
+                <br>
+            </ul>
+        </div>
+        <h1 class="text-center pt-4">
+            ¿Cual es el funcionamiento de Cloud Firestore?
+        </h1>
+        <div class="container">
+            <p class="pt-3">
+                Cloud Firestore es una base de datos NoSQL alojada en la nube a la que pueden acceder tus apps para Apple, Android y la Web directamente desde los SDK nativos. Cloud Firestore también está disponible en los SDKs nativos de Node.js, Java, Python, Unity, C++ y Go, además de las APIs de REST y RPC.
+<br><br>
+A partir del modelo de datos NoSQL de Cloud Firestore, almacenas los datos en documentos que contienen campos que se asignan a valores. Estos documentos se almacenan en colecciones, que son contenedores para tus documentos y que puedes usar para organizar tus datos y compilar consultas. Los documentos admiten varios tipos de datos diferentes, desde strings y números simples, hasta objetos anidados complejos. También puedes crear subcolecciones dentro de documentos y crear estructuras de datos jerárquicas que se ajustan a escala a medida que tu base de datos crece. El modelo de datos de Cloud Firestore admite cualquier estructura de datos que funcione mejor con tu aplicación.
+<br><br>
+Además, las consultas de Cloud Firestore son expresivas, eficientes y flexibles. Crea consultas superficiales para recuperar datos en el nivel del documento, sin la necesidad de recuperar la colección completa ni las subcolecciones anidadas. Agrega criterios de orden, filtros y límites a tus consultas o cursores para paginar los resultados. Para mantener actualizados los datos de tus apps sin tener que recuperar toda la base de datos cada vez que haya una actualización, agrega agentes de escucha en tiempo real. Estos te notifican con una instantánea de los datos cada vez que los datos de tus apps cliente escuchan para detectar cambios y recuperan solo los cambios nuevos.
+
+Protege el acceso a tus datos en Cloud Firestore con Firebase Authentication y las reglas de seguridad de Cloud Firestore para Android, las plataformas de Apple y JavaScript, o bien con la administración de identidades y accesos (IAM) para los lenguajes del servidor.
+            </p>
+        </div>
+        <h3>
+            Desventajas de Cloud Firestore
+        </h3>
+        <p> <strong>1. Costos:</strong> Puede resultar caro para grandes volúmenes de datos y altas tasas de operaciones debido a su modelo de precios basado en el uso.
+<br><br>
+            <strong>2. Límites de Consultas:</strong> Las consultas compuestas y agregaciones pueden ser limitadas en comparación con bases de datos SQL tradicionales.
+            <br><br>
+            <strong>3. Latencia:</strong> En aplicaciones que requieren operaciones de escritura muy rápidas, la latencia puede ser un problema.
+            <br><br>
+            <strong>4. Dependencia de Google Cloud: </strong>Estar atado a la infraestructura de Google puede ser una desventaja si se desea flexibilidad para cambiar de proveedor.
+            <br><br>
+            <strong>5. Curva de Aprendizaje: </strong> Para los desarrolladores acostumbrados a bases de datos SQL tradicionales, puede haber una curva de aprendizaje significativa.
+            <br><br>
+            <strong>6. Restricciones de Índices:</strong> La creación de índices personalizados puede ser complicada y está sujeta a limitaciones.
+            <br><br>
+            <strong>7. Consistencia Eventual:</strong> Aunque Firestore proporciona consistencia fuerte para operaciones individuales, la consistencia eventual puede ser un problema en operaciones distribuidas complejas.
+            <br><br>
+            <h3>Pagina oficial de documentación</h3>
+            <div class="row">
+                <div class="col-md-8 mt-4 pb-5">
+                    <img src="/img/Captura de pantalla 2024-07-14 184915.png" class="ms-5 shadow " alt="" width="90%" height="100%">
+            </div>
+            <div class="col-md-4 " style="padding-top: 7%;">
+                
+                <p class="text-center">Para mas información sobre Cloud Firestore, puedes visitar la pagina oficial de documentación de Cloud Firestore.</p>
+                <div class="d-flex justify-content-center">
+            <a href="https://firebase.google.com/docs/firestore?hl=es-419/" class="btn butt text-light">Link pagina oficial</a></div>
+        </div>
+        </div>
+</div>
+
+<div style="margin-top: 5%;">
+    <footer class="bg-ligth text-light text-center border-top pt-4" >
+        <p class="text-dark">Diseñado por Analisis y Desarrollo de Software Ficha No. 2670687</p>
+        <p class="text-dark fw-bold">&copy; 2024 Andres Quevedo</p>
+      </footer>
+    </div>
+
+    <Script src="/scripts.js"></Script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -3,103 +3,452 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>Base de datos NoSQL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="img/icon-tienda-removebg-preview.png">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/nosql-database.png">
   </head>
   <body>
 
-    <div class="d-flex">
-        <div id="sidebar-container" class="bg-primary">
-            <div class="logo">
-                <h4 class="text-light fw-bold">Base de datos NoSQL</h4>
-            </div>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item nav-link">
-                    <a href="#" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
-                        <span class="fw-semibold">Base de datos documentales</span> 
+    <button id="toggleSidebarBtn" class="text-success fs-2 transparent-background"><i class="lni lni-grid-alt"></i></button>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <button id="closeSidebarBtn" class="btn text-light fw-bold"><i class="lni CBbut fs-5 lni-close"></i></button>
+                <span class="text-light fw-bold">Base de datos NoSQL</span>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
+                    <span class="fw-semibold">Base de datos documentales</span> 
+                </a>
+                <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/mongodb-icon.png" class="me-3" alt="" width="30" height="30">MongoDB
                     </a>
-                    <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
-                        <li class="sidebar-item">
-                            <a href="#" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                            <img src="mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/firestore-icon.png" class="me-3" alt="" width="30" height="30">Cloud Firestore
                         </a>
-                        <ul id="MongoDB" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-item">
-                            <li class="sidebar-item mt-2">
-                                <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                    Concepto
-                                </a>
-                            </li>
-                                <li class="sidebar-item mt-1">
-                                    <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                        Caracteristicas
-                                    </a>
-                                </li>
-                                    <li class="sidebar-item mt-1">
-                                        <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                            Funcionamiento
-                                        </a>
-                                    </li>
-                                        <li class="sidebar-item mt-1">
-                                            <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                                Desventajas
-                                            </a>
-                                        </li>
-                                            <li class="sidebar-item mt-1 mb-2">
-                                                <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                                    Pagina oficial de documentacion
-                                                </a>
-                                            </li>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/couchicon.png" class="me-3" alt="" width="30" height="30">CouchDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
 
-                        </ul>
-                        </li>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-c" aria-expanded="false" aria-controls="bs-c">
+                    <span class="fw-semibold">Base de datos clave - valor</span> 
+                </a>
+                <ul id="bs-c" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/redisicon.png" class="me-3" alt="" width="30" height="30">Redis
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/memcachedicon.png" class="me-3" alt="" width="30" height="30">Memcached
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/dynamodbicon.png" class="me-3" alt="" width="30" height="30">Amazon DynamoDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
 
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-g" aria-expanded="false" aria-controls="bs-g">
+                    <span class="fw-semibold">Base de datos de grafos</span> 
+                </a>
+                <ul id="bs-g" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/neo4jiconn.png" class="me-3" alt="" width="30" height="30">Neo4j
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/neptuneicon.png" class="me-3" alt="" width="30" height="30">Amazon Neptune
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/orienticon.png" class="me-3" alt="" width="30" height="30">OrientDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
 
-
-
-
-
-                        <li class="sidebar-item">   
-                            <a href="#" class="nav-link text-light fw-semibold">
-                                <img src="firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
-                            </a>
-                            <ul id="MongoDB" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-item">
-                                <li class="sidebar-item mt-2">
-                                    <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                        Concepto
-                                    </a>
-                                </li>
-                                    <li class="sidebar-item mt-1">
-                                        <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                            Caracteristicas
-                                        </a>
-                                    </li>
-                                        <li class="sidebar-item mt-1">
-                                            <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                                Funcionamiento
-                                            </a>
-                                        </li>
-                                            <li class="sidebar-item mt-1">
-                                                <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                                    Desventajas
-                                                </a>
-                                            </li>
-                                                <li class="sidebar-item mt-1 mb-2">
-                                                    <a href="#" class="text-light nav-link fw-semibold collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                                                        Pagina oficial de documentacion
-                                                    </a>
-                                                </li>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-o" aria-expanded="false" aria-controls="bs-o">
+                    <span class="fw-semibold">Base de datos <br> orientadas a columnas</span> 
+                </a>
+                <ul id="bs-o" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="/paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/cassandraiconn.png" class="me-3" alt="" width="30" height="30">Apache Cassandra
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/hbaseiconn-removebg-preview.png" class="me-3" alt="" width="30" height="30">Apache HBase
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="/paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/bigicon.png" class="me-3" alt="" width="30" height="30">BigQueryB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+</div>
+    
+    <div class="container px-5 py-5">
+        <h1 class="text-center pt-4">Base de datos NoSQL</h1>
+        <div class="row mt-5">
+        <div class="col-md-8">
+        <p>NoSQL, también conocido como "no sólo SQL" o "no SQL", es un enfoque utilizado en el diseño de bases de datos que permite el almacenamiento y consulta de datos fuera de las estructuras tradicionales que se encuentran en las bases de datos relacionales.
+            <br>
+            <br>
+            Aunque NoSQL puede almacenar los datos que se encuentran en los sistemas de gestión de bases de datos relacionales (RDBMS), sólo los almacena de forma diferente en comparación con un RDBMS. La decisión de utilizar una base de datos relacional frente a una base de datos no relacional es en gran medida contextual y varía según el caso de uso.
+            <br>
+            <br>
+            En lugar de la típica estructura tabular de una base de datos relacional, las bases de datos NoSQL albergan datos dentro de una estructura de datos, como un documento JSON. Dado que este diseño de base de datos no relacional no requiere un esquema, ofrece una escalabilidad rápida para administrar conjuntos de datos grandes y normalmente no estructurados.
+            <br>
+            <br>
+            NoSQL también es un tipo de base de datos distribuida, lo que significa que la información se copia y almacena en varios servidores, que pueden ser remotos o locales. Esto garantiza la disponibilidad y fiabilidad de los datos. Si algunos de los datos se desconectan, el resto de la base de datos puede continuar ejecutándose.  
+            <br>
+            <br>
+            Actualmente, las empresas necesitan gestionar grandes volúmenes de datos a altas velocidades con la capacidad de escalar rápidamente para ejecutar aplicaciones web modernas en casi todos los sectores. En esta era de crecimiento dentro de la nube, big data y aplicaciones móviles y web, las bases de datos NoSQL proporcionan esa velocidad y escalabilidad, convirtiéndose en una opción popular por su rendimiento y facilidad de uso. </p>
+        </div>
+        <div class="col-md-4">
+            <img src="img/sigbs.png" class=" shadow" alt="" width="100%" style="margin-top: 10%;">
         </div>
     </div>
-        
+            <h2 class="text-center pt-4">
+                Tipo de base de datos NoSQL
+            </h2>
+            <p class="mt-4">NoSQL proporciona otras opciones para organizar los datos de muchas maneras. Al ofrecer diversas estructuras de datos, NoSQL puede aplicarse al análisis de datos, la gestión de big data, las redes sociales y el desarrollo de aplicaciones móviles. 
+                <br>
+                <br>
+                Una base de datos NoSQL administra la información utilizando cualquiera de estos modelos de datos principales: </p>
+                <h3 class="pt-4">
+                    Base de datos documentales
+                </h3>
+                <p>Como sugiere el nombre, las bases de datos de documentos almacenan los datos como documentos. Pueden ser útiles en la gestión de datos semiestructurados y, por lo general, los datos se almacenan en los formatos JSON, XML o BSON. Esto mantiene los datos juntos cuando se utilizan en aplicaciones, lo que reduce la cantidad de traducción necesaria para utilizar los datos. Los desarrolladores también disfrutan de una mayor flexibilidad, ya que no es necesario que los esquemas de datos coincidan entre documentos (por ejemplo, nombre frente a nombre_apellido). Sin embargo, esto puede resultar problemático para transacciones complejas y corromper los datos. Los casos de uso más populares de las bases de datos de documentos son los sistemas de gestión de contenidos y los perfiles de usuario. Un ejemplo de una base de datos orientada a documentos es MongoDB, el componente de base de datos de la pila MEAN.</p>
+                <h3>Caracteristicas de base de datos documentales</h3>
+                <p>Existen una serie de caracteristicas de base de datos documentales que destacan en su funcionamiento, como es el caso de su uso para el almacenamiento de los registros y la información relacionada con estos en una base documental.
+                    <br>
+                    <br>
+                    Cabe resaltar que los registros de las bases de datos orientados a documentos se caracterizan, a su vez, por permitir el almacenamiento de diferentes tipos de información. Además, los documentos incluidos en una base documental, pueden estar en formatos variados, como archivos de documentos de textos, en formato XML y, principalmente, en formato JSON, que es un lenguaje con mejor legibilidad que el SQL. Es importante resaltar que estos modelos de documentos se asignan naturalmente a los datos de la aplicación.</p>
+                    <h3>Funcionamiento de bases de datos documentales</h3>
+                    <p class="pt-2">Las bases de datos documentales funcionan almacenando datos en forma de documentos, generalmente en formatos como JSON o BSON. Cada documento es un conjunto de pares clave-valor que puede tener estructuras variables y anidadas. Las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) se aplican a estos documentos. Las bases de datos documentales permiten consultas flexibles sobre los documentos y soportan escalabilidad horizontal mediante la distribución de datos a través de múltiples servidores.</p>
+                    <h3>Desventajas de base de datos documentales</h3>
+                    <p class="pt-4"><strong>1. Inconsistencia de Esquema:</strong> La flexibilidad de esquema puede llevar a inconsistencias si no se maneja adecuadamente, ya que diferentes documentos en una colección pueden tener estructuras muy variadas.
+                        <br><br>
+                        <strong>2. Rendimiento de Consultas Complejas:</strong> Aunque son eficientes para consultas simples, pueden ser menos óptimas para consultas complejas y operaciones de agregación en comparación con las bases de datos relacionales.
+                        <br><br>
+                        <strong>3. Espacio de Almacenamiento:</strong> Los documentos pueden ocupar más espacio debido a la redundancia de datos, especialmente si se almacenan muchas copias de campos similares en diferentes documentos.
+                        <br><br>
+                        <strong>4. Normas y Transacciones:</strong> Las bases de datos documentales suelen tener soporte limitado para transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad), lo que puede ser una desventaja para aplicaciones que requieren integridad de datos estricta.
+                        <br><br>
+                        <strong>5. Interoperabilidad:</strong> La falta de un esquema fijo puede dificultar la interoperabilidad con otras aplicaciones y sistemas que esperan una estructura de datos más rígida y predefinida.
+                        <br><br>
+                        <strong>6. Curva de Aprendizaje:</strong> Puede ser más difícil de aprender y utilizar eficazmente para aquellos acostumbrados a las bases de datos relacionales tradicionales.
+                        <br><br>
+                        <strong>7. Limitaciones de Índices:</strong> Aunque permiten la creación de índices, estos pueden ser menos eficientes o más limitados en comparación con las capacidades de indexación de las bases de datos relacionales.</p>
+                <h5 class="mb-5">Algunas de las bases de datos documentales son:</h5>
+                <div class="row mt-4 ms-5 mb-5">
+                    <div class="col-md-4">
+                    <div class="card h-100" style="width: 95%;">
+                        <img src="img/2090013.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">MongoDB</h5>
+                          <p class="card-text">MongoDB es una base de datos de documentos que ofrece gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado, lo cual permite manejar grandes volúmenes de datos de manera eficiente.</p>
+                          <div class="d-flex justify-content-center pt-4">
+                            <a href="paginas/mongo.html" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                    <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/bannerfire.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Cloud Firestore</h5>
+                          <p class="card-text">Cloud Firestore es una base de datos de documentos NoSQL que permite almacenar, sincronizar y consultar fácilmente datos en tus aplicaciones web y móviles a escala global, ofreciendo alta eficiencia y flexibilidad para manejar grandes volúmenes de datos.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="paginas/cloud.html" class="btn butt fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
 
+                      <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/couchdb.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title  fs-3">CouchDB</h5>
+                          <p class="card-text">Apache CouchDB es una base de datos de documentos NoSQL de código abierto que recopila y almacena datos en formatos de documentos basados en JSON, proporcionando una solución robusta y escalable para el manejo de datos.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="paginas/couchDB.html" class="btn CBbutt fw-bold mt-4">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                </div>
+
+                <h3 class="pt-4">
+                    Base de datos clave-valor
+                </h3>
+                <p>Suele considerarse la forma más sencilla de las bases de datos NoSQL. Este modelo de datos sin esquema se organiza en un diccionario de pares clave-valor, donde cada elemento tiene una clave y un valor. La clave podría ser algo similar a lo que se encuentra en una base de datos SQL, como el ID de un carrito de la compra, mientras que el valor es una matriz de datos, como cada artículo del carrito de la compra de ese usuario. Se utiliza habitualmente para almacenar en caché la información de la sesión del usuario, como en el caso de los carritos de la compra. Sin embargo, no es lo ideal cuando necesitas extraer varios registros a la vez. Redis y Memcached son ejemplos de bases de datos clave-valor de código abierto.
+                </p>
+
+                <h3>Caracteristicas de base de datos clave - valor</h3>
+
+                <p class="pt-4"> <strong>Soporte para tipos de datos complejos</strong><br>
+                    Los almacenes de clave-valor admiten tipos de datos definidos, como números enteros y texto. Sin embargo, muchos de ellos también admiten objetos más complejos, como matrices, diccionarios anidados, imágenes, videos y datos semiestructurados. Al proporcionarle a la base de datos más información sobre sus datos, hay espacio para una mayor optimización del rendimiento de las consultas y el almacenamiento.
+                    <br><br>
+                    <strong>No es necesario unir tablas</strong><br>
+                    Las bases de datos de clave-valor no necesitan realizar ninguna unión de tablas que consuma muchos recursos. Su flexibilidad permite almacenar toda la información necesaria en una sola tabla. Esta es una de las razones por las que las tiendas de clave-valor funcionan tan bien.
+                    <br><br>
+                     <strong> Soporte de clave secundaria</strong><br>
+Algunos almacenes de clave-valor permiten definir dos o más claves o índices secundarios diferentes para acceder a los mismos datos. Por ejemplo, puede almacenar los datos de los clientes por dirección de correo electrónico clave y número de teléfono clave.
+<br><br>
+<strong>Replicación</strong><br>
+Muchos almacenes de clave-valor ofrecen soporte de replicación integrado al copiar automáticamente los datos en varios nodos de almacenamiento. Esto ayuda a la recuperación automática en caso de desastres; aún conservará sus datos en caso de que falle el servidor.
+<br><br>
+<strong>Particionado</strong><br>
+El particionado es la forma de distribuir los datos entre los nodos. Muchas bases de datos de clave-valor ofrecen opciones de particionado predeterminadas. Algunas también ofrecen la opción de definir los parámetros de entrada para las particiones. Por ejemplo, puede particionar las claves numéricas en grupos de 1000. Las bases de datos de clave-valor avanzadas también proporcionan soporte automático para distribuir su base de datos de clave-valor en varias ubicaciones geográficas. Esto mejora la disponibilidad y la fiabilidad de las aplicaciones porque puede responder a las consultas cerca de la ubicación del usuario.
+<br><br>
+<strong>Soporte para ACID</strong><br>
+La Atomicity, Consistency, Isolation, and Durability (ACID, atomicidad, consistencia, aislamiento y durabilidad) son propiedades de la base de datos que garantizan la precisión y fiabilidad de los datos en todas las circunstancias. Por ejemplo, si realiza varios cambios en los datos en una secuencia, la atomicidad requiere que todos los cambios se realicen en orden. Si un cambio falla, todo falla.
+<br><br>
+Las bases de datos de clave-valor avanzadas proporcionan soporte nativo del lado del servidor para ACID. Esto simplifica la experiencia de los desarrolladores a la hora de realizar cambios coordinados de “todo o nada” en varios elementos y en distintas tablas. Gracias al soporte de las transacciones, los desarrolladores pueden incorporar la escalabilidad, el rendimiento y los beneficios empresariales a un conjunto mayor de cargas de trabajo críticas.
+<br><br>
+<strong>Claves clasificadas</strong><br>
+Un almacén de clave-valor puede ordenar las claves para que los datos se almacenen de forma sistemática y para implementar la partición. Por ejemplo, las claves se pueden clasificar:
+<br>
+<ul>
+<li>Alfabéticamente o numéricamente</li>
+<li>Cronológicamente</li>
+<li>Según el tamaño de los datos</li>
+</ul>
+</p>
+
+                    <h3>Funcionamiento de bases de datos clave - valor</h3>
+
+                    <p class="pt-2">Las bases de datos de clave-valor funcionan organizando todos los datos como un conjunto de pares de clave-valor. Puede pensar en la clave como una pregunta y, en el valor, como la respuesta a la pregunta. En el siguiente ejemplo, la clave principal es una combinación de dos claves, ID de producto y Tipo. La ID del producto es la clave de partición que describe la partición en la que se almacenará el artículo. El Tipo es la clave de ordenación, que determina el orden en el que se almacenarán los elementos en el disco. La combinación de la clave de partición y la clave de ordenación forma una clave principal única, que se asigna a un único valor de la base de datos.
+<br><br>
+                        En este ejemplo, el libro de objetos de datos tiene atributos como el título, el autor y la fecha de publicación. Cada objeto de datos de libros tiene una clave llamada BookID. Puede vincular directamente el BookID y el objeto de libro asociado en el almacén de clave-valor. Además, puede recuperar datos buscando el BookID en la tabla. Además, cada elemento tiene su propio esquema, lo que hace que los almacenes de clave-valor sean muy flexibles para almacenar datos de diferentes estructuras.</p>
+
+                    <h3>Desventajas de base de datos clave - valor</h3>
+
+                    <p class="pt-4">
+                        No tiene estándares en el manejo de datos. En ocasiones los lenguajes de consultas son básicos, impidiendo realizar trabajos de profundidad.
+<br><br>
+Algunos gestores carecen de herramientas avanzadas para su uso y configuración personalizada.
+<br><br>
+Las consultas y el ordenamiento de la información pueden ser realizados solo partiendo de la clave primaria.
+                    </p>
+
+                <h5 class="mb-5">Algunas de las bases de datos clave-valor son:</h5>
+                <div class="row mt-4 ms-5 mb-5">
+                    <div class="col-md-4">
+                    <div class="card h-100" style="width: 95%;">
+                        <img src="img/Redis-Logo.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Redis</h5>
+                          <p class="card-text">Redis es una base de datos NoSQL de código abierto que funciona en memoria, diseñada para ofrecer alta disponibilidad y rendimiento. Es conocida por su capacidad para manejar estructuras de datos avanzadas, como listas, conjuntos y hashes.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/Memcached.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Memcached</h5>
+                          <p class="card-text">Memcached es un sistema de almacenamiento en caché distribuido en memoria que se utiliza para acelerar aplicaciones web dinámicas mediante el almacenamiento de pares clave-valor. Es simple, ligero y eficaz para reducir la carga de las bases de datos.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/dynamodb.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title  fs-3">Amazon DynamoDB</h5>
+                          <p class="card-text">DynamoDB es un servicio de base de datos NoSQL completamente gestionado por Amazon Web Services (AWS). Está diseñado para manejar grandes volúmenes de datos y tráfico, proporcionando escalabilidad automática y rendimiento confiable.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold mt-4">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                </div>
+
+                <h3 class="pt-4">
+                    Base de datos de grafos
+                </h3>
+                <p>Una base de datos orientada a grafos es una plataforma especializada y de un solo propósito para crear y manipular grafos. Los grafos contienen nodos, bordes y propiedades que se utilizan para representar y almacenar datos de una forma que no permiten las bases de datos relacionales.
+                    <br>
+                    <br>
+                    La analítica de grafos es otro término de uso común y hace referencia específicamente al proceso de analizar datos en un formato de grafo utilizando los puntos de datos como nodos y las relaciones como bordes. Para la analítica de grafos se precisa una base de datos que admita formatos de grafos; por ejemplo, una base de datos orientada a grafos especializada o una base de datos convergente que admita varios modelos de datos, incluidos los grafos.
+                </p>
+                <h3>Caracteristicas de base de datos de grafos</h3>
+                <p>Las principales características que permiten que estas bases de datos sean tan especiales es porque pueden cumplir con algunos elementos relevantes. En primer lugar, algunas de ellas (cómo Neo4J), cumplen con el paradigma ACID. El Paradigma ACID consiste en Atomicidad, Consistencia, Aislamiento y Durabilidad, este criterio permite que consideremos a estas bases de datos como elementos transaccionales. <br><br>
+                A su vez este paradigma nos permite asegurar que las consultas, ejecuciones y demás tareas que sean desarrolladas dentro de la base de datos tendrán consistencia transaccional, es decir, que las transacciones serán procesadas en el orden que corresponden y que antes de ser procesada la siguiente, cualquier transacción anterior será almacenada y actualizada. Esto nos permite asegurarnos que los elementos afectados por nuestra consulta se actualiza en todos los nodos y posteriormente se darán los siguientes procesos. <br><br>
+                Otra de las características importantes de las bases de datos orientadas a grafos es su lenguaje. Al ser bases de datos NoSQL generan un cúmulo de opciones más amplío como el lenguaje SPARQL. Existen casos cómo Neo4j que ha desarrollado su propio lenguaje declarativo de alto nivel conocido como Cypher. Este lenguaje es actualmente uno de los más populares y también uno de los más potentes ya que permite de forma simple representar patrones de los nodos y de las relaciones.
+                </p>
+                <h3>
+                    Funcionamiento de base de datos de grafos
+                </h3>
+                <p>
+                    Los grafos y las bases de datos orientadas a grafos proporcionan modelos de grafos para representar las relaciones en los datos. Gracias a estas, los usuarios pueden hacer consultas transversales basadas en conexiones y aplicar algoritmos de grafos a fin de encontrar patrones, rutas, comunidades, factores influyentes, puntos únicos de fallo y otras relaciones. Esto permite un análisis más eficiente a gran escala con cantidades masivas de datos. El poder de los grafos reside en la analítica, los conocimientos que aportan y su capacidad para vincular fuentes de datos dispares.
+                    <br><br>
+                    En el análisis de grafos, los algoritmos exploran las rutas y la distancia entre los vértices, la importancia de estos y su agrupación. Por ejemplo, para determinar la importancia, los algoritmos suelen fijarse en los bordes de entrada, la importancia de los vértices circundantes y otros indicadores.
+                    <br><br>
+                    Los algoritmos de grafos —operaciones diseñadas específicamente para analizar relaciones y comportamientos entre datos en grafos— permiten comprender cosas que resultan difíciles de ver con otros métodos. En el análisis de grafos, los algoritmos exploran las rutas y la distancia entre los vértices, la importancia de estos y su agrupación. A fin de determinar la importancia, los algoritmos suelen fijarse en los bordes de entrada, la importancia de los vértices circundantes y otros indicadores. Por ejemplo, los algoritmos de grafos pueden identificar qué individuo o elemento está más conectado con otros en las redes sociales o los procesos comerciales. Los algoritmos pueden identificar comunidades, anomalías, patrones comunes y rutas que conectan individuos o transacciones relacionadas.
+                    <br><br>
+                    Debido a que las bases de datos de grafos almacenan relaciones de forma explícita, las consultas y los algoritmos que utilizan la conectividad entre vértices se pueden ejecutar en fracciones de segundo, y no en horas o días. Los usuarios no necesitan ejecutar un montón de combinaciones, y es mucho más fácil usar los datos para el análisis y el aprendizaje automático a fin de descubrir cosas sobre el mundo que nos rodea.
+                    <h3>Desventajas de base de datos de grafos</h3>
+                    <p>Es difícil de escalar, por estar diseñado para arquitecturas con un solo servidor
+                        <br><br>
+                        Sin lenguaje de consulta consistente
+                    </p>
+                </p>
+                <h5 class="mb-5">Algunas de las bases de datos grafos son:</h5>
+                <div class="row mt-4 ms-5 mb-5">
+                    <div class="col-md-4">
+                    <div class="card h-100" style="width: 95%;">
+                        <img src="img/neo4jicon.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Neo4j</h5>
+                          <p class="card-text">Neo4j es un software libre de Base de datos orientada a grafos, implementado en Java. Los desarrolladores describen a Neo4j como un motor de persistencia embebido, basado en disco, implementado en Java, completamente transaccional, que almacena datos estructurados en grafos en lugar de en tablas</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn CBbutt fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/Neptune.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Amazon Neptun</h5>
+                          <p class="card-text">Amazon Neptune es un servicio de base de datos de gráficos rápido, fiable y completamente administrado que le permite crear y ejecutar fácilmente aplicaciones que funcionen con conjuntos de datos altamente conectados. El componente principal de Neptune es un motor de base de datos de gráficos de alto rendimiento y personalizado..</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/orientDBicon.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title  fs-3">OrientDB</h5>
+                          <p class="card-text">OrientDB es un sistema de gestión de bases de datos NoSQL de código abierto. Es una base de datos multimodelo que admite gráficos, documentos, claves / valores y modelos de objetos. Las relaciones se gestionan como en bases de datos de gráficos con conexiones directas entre registros. Está escrito en Java y es increíblemente rápido</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold mt-4">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                </div>
+
+                <h3 class="pt-4">
+                    Base de datos orientadas a columnas
+                </h3>
+
+                <p>Suele considerarse la forma más sencilla de las bases de datos NoSQL. Este modelo de datos sin esquema se organiza en un diccionario de pares clave-valor, donde cada elemento tiene una clave y un valor. La clave podría ser algo similar a lo que se encuentra en una base de datos SQL, como el ID de un carrito de la compra, mientras que el valor es una matriz de datos, como cada artículo del carrito de la compra de ese usuario. Se utiliza habitualmente para almacenar en caché la información de la sesión del usuario, como en el caso de los carritos de la compra. Sin embargo, no es lo ideal cuando necesitas extraer varios registros a la vez. Redis y Memcached son ejemplos de bases de datos clave-valor de código abierto.
+                </p>
+
+                <h3>Caracteristicas de base de datos orientadas a columnas </h3>
+
+                <p>Las bases de datos orientadas a columnas almacenan datos en columnas en lugar de filas, lo que permite una mayor eficiencia en las operaciones de lectura y consultas analíticas. Son ideales para aplicaciones de inteligencia empresarial y análisis de datos debido a su capacidad para realizar compresión de datos, escaneo rápido de columnas y operaciones de agregación eficientes. Aunque las escrituras individuales pueden ser menos óptimas, las escrituras por lotes son eficientes. Estas bases de datos también son adecuadas para datos escasos y permiten una fácil escalabilidad horizontal. Ejemplos populares incluyen Apache Cassandra, HBase, Amazon Redshift y Google Bigtable.</p>
+
+                <h3>Funcionamiento de base de datos orientadas a columnas</h3>
+
+                <p>Las bases de datos orientadas a columnas almacenan datos por columnas en lugar de filas, lo que mejora la eficiencia de lectura y permite consultas analíticas rápidas. Al separar cada columna, se facilita la compresión de datos y se reduce el espacio de almacenamiento. Las consultas leen solo las columnas necesarias, optimizando las operaciones de lectura. Son ideales para análisis de grandes volúmenes de datos y operaciones de agregación. Las escrituras se optimizan mejor en lotes y la estructura permite un fácil escalado horizontal.</p>
+
+                <h3>Desventajas de base de datos orientadas a columnas</h3>
+                    <p>
+                        Las bases de datos orientadas a columnas presentan varias desventajas. Las operaciones de escritura individual pueden ser menos eficientes, ya que están optimizadas para lecturas masivas y escrituras en lotes. El diseño de esquemas es complejo y requiere un enfoque cuidadoso para maximizar el rendimiento. Algunas utilizan consistencia eventual, no adecuada para aplicaciones que necesitan consistencia estricta en tiempo real. Además, los desarrolladores enfrentan una curva de aprendizaje pronunciada, y las consultas ad-hoc o transaccionales complejas pueden ser menos eficientes. También, el almacenamiento de datos pequeños puede no ser tan eficiente y requieren más recursos y esfuerzos de mantenimiento, especialmente en entornos de gran escala. Estas limitaciones hacen que sean más adecuadas para análisis de grandes volúmenes de datos en lugar de aplicaciones transaccionales.
+                    </p>
+                
+                <h5 class="mb-5">Algunas de las bases de datos orientadas a columna son:</h5>
+                <div class="row mt-4 ms-5 mb-5">
+                    <div class="col-md-4">
+                    <div class="card h-100" style="width: 95%;">
+                        <img src="img/Cassandraicon.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Apache Cassandra</h5>
+                          <p class="card-text">Redis es una base de datos NoSQL de código abierto que funciona en memoria, diseñada para ofrecer alta disponibilidad y rendimiento. Es conocida por su capacidad para manejar estructuras de datos avanzadas, como listas, conjuntos y hashes.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/Hbaseicon.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title fs-3">Apache HBase</h5>
+                          <p class="card-text">Memcached es un sistema de almacenamiento en caché distribuido en memoria que se utiliza para acelerar aplicaciones web dinámicas mediante el almacenamiento de pares clave-valor. Es simple, ligero y eficaz para reducir la carga de las bases de datos.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-md-4">
+                      <div class="card" style="width: 95%;">
+                        <img src="img/bigqueryicon.png" class="card-img-top" alt="..." height="316px">
+                        <div class="card-body">
+                          <h5 class="card-title  fs-3">BigQueryB</h5>
+                          <p class="card-text">DynamoDB es un servicio de base de datos NoSQL completamente gestionado por Amazon Web Services (AWS). Está diseñado para manejar grandes volúmenes de datos y tráfico, proporcionando escalabilidad automática y rendimiento confiable.</p>
+                          <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-success fw-bold mt-4">Ver más</a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                </div>
+
+    </div>
+
+    <Script src="scripts.js"></Script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  </body>
+</body>
+</html>

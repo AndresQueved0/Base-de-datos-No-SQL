@@ -1,21 +1,38 @@
-function loadContent(page) {
-    let content = document.getElementById('content');
-    
-    switch(page) {
-        case 'home':
-            content.innerHTML = '<h1>Inicio</h1><p>Bienvenido a la página de inicio. Aquí encontrarás las últimas noticias y actualizaciones.</p>';
-            break;
-        case 'about':
-            content.innerHTML = '<h1>Acerca de</h1><p>Somos una empresa dedicada a brindar soluciones innovadoras. Nuestra misión es mejorar la vida de las personas a través de la tecnología.</p>';
-            break;
-        case 'services':
-            content.innerHTML = '<h1>Servicios</h1><p>Ofrecemos una amplia gama de servicios para satisfacer tus necesidades. Desde consultoría hasta desarrollo de software, estamos aquí para ayudarte.</p>';
-            break;
-        case 'contact':
-            content.innerHTML = '<h1>Contacto</h1><p>Puedes contactarnos a través de nuestro correo electrónico: contacto@empresa.com o llamarnos al (555) 123-4567.</p>';
-            break;
-        default:
-            content.innerHTML = '<h1>Error</h1><p>Página no encontrada.</p>';
-            break;
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+    var closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+    // Función para abrir el sidebar
+    function openSidebar() {
+        sidebar.classList.add('active');
+        toggleSidebarBtn.style.display = 'none'; // Oculta el botón de abrir inmediatamente
     }
-}
+
+    // Función para cerrar el sidebar
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        // Retrasa la aparición del botón de abrir hasta que la transición del sidebar haya terminado
+        setTimeout(function() {
+            toggleSidebarBtn.style.display = 'block';
+        }, 150); // Ajusta este valor al tiempo de duración de la transición del sidebar
+    }
+
+    // Evento para abrir el sidebar
+    toggleSidebarBtn.addEventListener('click', function() {
+        openSidebar();
+    });
+
+    // Evento para cerrar el sidebar
+    closeSidebarBtn.addEventListener('click', function() {
+        closeSidebar();
+    });
+
+    // Verifica el estado inicial del sidebar al cargar la página
+    if (sidebar.classList.contains('active')) {
+        toggleSidebarBtn.style.display = 'none';
+    } else {
+        toggleSidebarBtn.style.display = 'block';
+    }
+});
+
