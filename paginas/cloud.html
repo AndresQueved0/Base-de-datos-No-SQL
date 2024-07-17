@@ -11,28 +11,107 @@
     <link rel="icon" href="/img/firestore-icon.png">
   </head>
   <body>
-    <button id="toggleSidebarBtn" class=" fs-2 transparent-background"><i class="lni buttt lni-grid-alt"></i></button>
+    
+    <button id="toggleSidebarBtn" class="text-success fs-2 transparent-background"><i class="lni lni-grid-alt"></i></button>
     <div class="sidebar" id="sidebar">
         <div class="logo">
-            <button id="closeSidebarBtn" class="btn text-light fw-bold">
-                
-                Base de datos NoSQL
-            </button>
+            <button id="closeSidebarBtn" class="btn text-light fw-bold"><i class="lni CBbut fs-5 lni-close"></i></button>
+                <span class="text-light fw-bold">Base de datos NoSQL</span>
         </div>
         <ul class="sidebar-nav">
             <li class="sidebar-item nav-link">
-                <a href="/index.html" class="nav-link text-light collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
-                    Base de datos documentales
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-d" aria-expanded="false" aria-controls="bs-d">
+                    <span class="fw-semibold">Base de datos documentales</span> 
                 </a>
                 <ul id="bs-d" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
                     <li class="sidebar-item">
-                        <a href="/mongo.html" class="text-light nav-link fw-semibold has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#MongoDB" aria-expanded="false" aria-controls="MongoDB">
-                        <img src="/img/mongodb-icon.png" class="me-3" alt="" width="25" height="25 ">MongoDB
+                        <a href="paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/mongodb-icon.png" class="me-3" alt="" width="30" height="30">MongoDB
                     </a>
                     </li>
                     <li class="sidebar-item">   
-                        <a href="#" class="nav-link text-light fw-semibold">
-                            <img src="/img/firestore-icon.png" class="me-3" alt="" width="23" height="25">Cloud Firestore
+                        <a href="paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/firestore-icon.png" class="me-3" alt="" width="30" height="30">Cloud Firestore
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/couchicon.png" class="me-3" alt="" width="30" height="30">CouchDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-c" aria-expanded="false" aria-controls="bs-c">
+                    <span class="fw-semibold">Base de datos clave - valor</span> 
+                </a>
+                <ul id="bs-c" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/redisicon.png" class="me-3" alt="" width="30" height="30">Redis
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/memcachedicon.png" class="me-3" alt="" width="30" height="30">Memcached
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/dynamodbicon.png" class="me-3" alt="" width="30" height="30">Amazon DynamoDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-g" aria-expanded="false" aria-controls="bs-g">
+                    <span class="fw-semibold">Base de datos de grafos</span> 
+                </a>
+                <ul id="bs-g" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/neo4jiconn.png" class="me-3" alt="" width="30" height="30">Neo4j
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/neptuneicon.png" class="me-3" alt="" width="30" height="30">Amazon Neptune
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/orienticon.png" class="me-3" alt="" width="30" height="30">OrientDB
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-item nav-link">
+                <a href="bsdoc.html" class="nav-link text-light has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#bs-o" aria-expanded="false" aria-controls="bs-o">
+                    <span class="fw-semibold">Base de datos <br> orientadas a columnas</span> 
+                </a>
+                <ul id="bs-o" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar-container">
+                    <li class="sidebar-item">
+                        <a href="paginas/mongo.html" class="text-light nav-link fw-semibold">
+                        <img src="img/cassandraiconn.png" class="me-3" alt="" width="30" height="30">Apache Cassandra
+                    </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/cloud.html" class="nav-link text-light fw-semibold">
+                            <img src="img/hbaseiconn-removebg-preview.png" class="me-3" alt="" width="30" height="30">Apache HBase
+                        </a>
+                    </li>
+                    <li class="sidebar-item">   
+                        <a href="paginas/couchDB.html" class="nav-link text-light fw-semibold">
+                            <img src="img/bigicon.png" class="me-3" alt="" width="30" height="30">BigQueryB
                         </a>
                     </li>
                 </ul>
